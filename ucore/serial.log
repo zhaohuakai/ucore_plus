@@ -1,0 +1,514 @@
+Initializing Goldfish Board...
+pic_init()
+Probing devices on pdev bus...
+  Dev: -1, goldfish_interrupt_controller, base=0xff000000, size=0x1000, irq=0, irq_count=0
+  Dev: -1, goldfish_device_bus, base=0xff001000, size=0x1000, irq=1, irq_count=1
+  Dev: -1, goldfish_timer, base=0xff003000, size=0x1000, irq=3, irq_count=1
+  Dev: -1, goldfish_rtc, base=0xff010000, size=0x1000, irq=10, irq_count=1
+  Dev: 0, goldfish_tty, base=0xff002000, size=0x1000, irq=4, irq_count=1
+  Dev: 1, goldfish_tty, base=0xff011000, size=0x1000, irq=11, irq_count=1
+  Dev: 2, goldfish_tty, base=0xff012000, size=0x1000, irq=12, irq_count=1
+  Dev: 0, smc91x, base=0xff013000, size=0x1000, irq=13, irq_count=1
+  Dev: 0, goldfish_fb, base=0xff014000, size=0x1000, irq=14, irq_count=1
+  Dev: 0, goldfish_audio, base=0xff004000, size=0x1000, irq=15, irq_count=1
+  Dev: 0, goldfish_mmc, base=0xff005000, size=0x1000, irq=16, irq_count=1
+  Dev: 0, goldfish_memlog, base=0xff006000, size=0x1000, irq=0, irq_count=0
+  Dev: 0, goldfish-battery, base=0xff015000, size=0x1000, irq=17, irq_count=1
+  Dev: 0, goldfish_events, base=0xff016000, size=0x1000, irq=18, irq_count=1
+  Dev: 0, goldfish_nand, base=0xff017000, size=0x1000, irq=0, irq_count=0
+  Dev: -1, qemu_pipe, base=0xff018000, size=0x2000, irq=19, irq_count=1
+  Dev: 0, goldfish-switch, base=0xff01a000, size=0x1000, irq=20, irq_count=1
+  Dev: 1, goldfish-switch, base=0xff01b000, size=0x1000, irq=21, irq_count=1
+Initrd: 0x0046b000 - 0x09a6afff, size: 0x09600000, magic: 0x2f8dbe2a
+(THU.CST) os is loading ...
+
+Special kernel symbols:
+  entry  0x0004a53c (phys)
+  etext  0x00098000 (phys)
+  edata  0x09a6b000 (phys)
+  end    0x09a71aac (phys)
+Kernel executable memory footprint: 157854KB
+memory managment: buddy_pmm_manager
+memory map:
+  memory: 0x10000000, [0x00000000, 0x0fffffff], type = 1.
+freemem start at: 0x09cb2000
+check_alloc_page() succeeded!
+boot_pgdir at: 0x0fff4000 
+check_pgdir() succeeded!
+mapping initrd to 0xb0000000
+-------------------- BEGIN --------------------
+PDE(100) 00000000-10000000 10000000 -rw
+  |-- PTE(10000) 00000000-10000000 10000000 -rw
+PDE(096) b0000000-b9600000 09600000 -rw
+  |-- PTE(09600) b0000000-b9600000 09600000 -rw
+PDE(001) d0000000-d0100000 00100000 -rw
+  |-- PTE(00004) d0000000-d0004000 00004000 -rw
+PDE(010) ff000000-00000000 01000000 -rw
+  |-- PTE(00ff0) ff000000-ffff0000 00ff0000 -rw
+  |-- PTE(00001) ffff0000-ffff1000 00001000 urw
+  |-- PTE(0000f) ffff1000-00000000 0000f000 -rw
+--------------------- END ---------------------
+mmu enabled.
+-------------------- BEGIN --------------------
+PDE(100) 00000000-10000000 10000000 -rw
+  |-- PTE(10000) 00000000-10000000 10000000 -rw
+PDE(096) b0000000-b9600000 09600000 -rw
+  |-- PTE(09600) b0000000-b9600000 09600000 -rw
+PDE(001) d0000000-d0100000 00100000 -rw
+  |-- PTE(00004) d0000000-d0004000 00004000 -rw
+PDE(010) ff000000-00000000 01000000 -rw
+  |-- PTE(00ff0) ff000000-ffff0000 00ff0000 -rw
+  |-- PTE(00001) ffff0000-ffff1000 00001000 urw
+  |-- PTE(0000f) ffff1000-00000000 0000f000 -rw
+--------------------- END ---------------------
+check_slab() succeeded!
+slab_init() done
+Init map_io: Goldfish
+pmm_init() done.
+check_vma_struct() succeeded!
+check_vmm() succeeded.
+PROBE init.c: 139
+sched class: MLFQ_scheduler
+PROBE init.c: 144
+PROBE init.c: 146
+ramdisk_init(): initrd found, magic: 0x2f8dbe2a, 0x0004b000 secs
+PROBE init.c: 150
+PROBE init.c: 152
+sfs: mount: 'simple file system' (24981/13419/38400)
+vfs: mount disk0.
+PROBE init.c: 154
+Calibrating delay loop... 313.75 BogoMIPS, loops_per_jiffy=1568768
+<1>TODO init_waitqueue_head
+<7>kthread_create: kworkqueue, func = 0x8dca4
+<1>TODO __create_workqueue_key
+<7>kobject: 'devices' (0xfd2e158): kobject_add_internal: parent: '<NULL>', set: '<NULL>'
+<7>kobject: 'dev' (0xfd2e190): kobject_add_internal: parent: '<NULL>', set: '<NULL>'
+<7>kobject: 'block' (0xfd2e1d0): kobject_add_internal: parent: 'dev', set: '<NULL>'
+<7>kobject: 'char' (0xfd2e210): kobject_add_internal: parent: 'dev', set: '<NULL>'
+<7>kobject: 'bus' (0xfd2e258): kobject_add_internal: parent: '<NULL>', set: '<NULL>'
+<7>kobject: 'class' (0xfd2e298): kobject_add_internal: parent: '<NULL>', set: '<NULL>'
+<7>device: 'platform': device_add
+<7>kobject: 'platform' (0x4697a4): kobject_add_internal: parent: 'devices', set: 'devices'
+<7>kobject: 'platform' (0xfd1f398): kobject_add_internal: parent: 'bus', set: 'bus'
+<7>kobject: 'devices' (0xfd2e2d8): kobject_add_internal: parent: 'platform', set: '<NULL>'
+<7>kobject: 'drivers' (0xfd2e318): kobject_add_internal: parent: 'platform', set: '<NULL>'
+<7>bus: 'platform': registered
+<7>kobject: 'system' (0xfd2e358): kobject_add_internal: parent: 'devices', set: '<NULL>'
+Init Machine: Goldfish
+<7>Registering platform device 'goldfish_pdev_bus'. Parent at platform
+<7>device: 'goldfish_pdev_bus': device_add
+<7>kobject: 'goldfish_pdev_bus' (0x46a37c): kobject_add_internal: parent: 'platform', set: 'devices'
+<7>bus: 'platform': add device goldfish_pdev_bus
+do_initcalls() 00097334 00097364 12 calls, begin...
+  calling 0x00095f1c
+<7>device class 'input': registering
+<7>kobject: 'input' (0xfd1b668): kobject_add_internal: parent: 'class', set: 'class'
+  calling 0x00095fd0
+<7>proc_create_data: fb
+<7>device class 'graphics': registering
+<7>kobject: 'graphics' (0xfd1b768): kobject_add_internal: parent: 'class', set: 'class'
+  calling 0x00096220
+<1>TODO init_waitqueue_head
+<7>kthread_create: kmmcd, func = 0x8dca4
+<1>TODO __create_workqueue_key
+<7>kobject: 'mmc' (0xfd1f518): kobject_add_internal: parent: 'bus', set: 'bus'
+<7>kobject: 'devices' (0xfd2e458): kobject_add_internal: parent: 'mmc', set: '<NULL>'
+<7>kobject: 'drivers' (0xfd2e498): kobject_add_internal: parent: 'mmc', set: '<NULL>'
+<7>bus: 'mmc': registered
+<7>device class 'mmc_host': registering
+<7>kobject: 'mmc_host' (0xfd1b968): kobject_add_internal: parent: 'class', set: 'class'
+  calling 0x00096660
+<7>kobject: 'module' (0xfd2e4d8): kobject_add_internal: parent: '<NULL>', set: '<NULL>'
+  calling 0x00097364
+<7>bus: 'platform': add driver goldfish_events
+<7>kobject: 'goldfish_events' (0xfd1f590): kobject_add_internal: parent: 'drivers', set: 'drivers'
+  calling 0x00095cfc
+<1>TODO __wake_up
+  calling 0x000966e4
+<7>proc_create_data: ioports
+<7>proc_create_data: iomem
+  calling 0x00096db4
+char example register success!
+  calling 0x00096f24
+<7>bus: 'mmc': add driver ucore_mmcblk
+<7>kobject: 'ucore_mmcblk' (0xfd1f690): kobject_add_internal: parent: 'drivers', set: 'drivers'
+  calling 0x00096f88
+<7>bus: 'platform': add driver goldfish_pdev_bus
+<7>kobject: 'goldfish_pdev_bus' (0xfd1f710): kobject_add_internal: parent: 'drivers', set: 'drivers'
+<7>bus: 'platform': driver_probe_device: matched device goldfish_pdev_bus with driver goldfish_pdev_bus
+<7>bus: 'platform': really_probe: probing driver goldfish_pdev_bus with device goldfish_pdev_bus
+<7>> goldfish_pdev_bus_probe
+<7>request_irq 1
+goldfish_new_pdev goldfish_interrupt_controller at ff000000 irq -1
+kernel warning at sched.c:160:
+    wakeup runnable process.
+
+goldfish_new_pdev goldfish_device_bus at ff001000 irq 1
+goldfish_new_pdev goldfish_timer at ff003000 irq 3
+goldfish_new_pdev goldfish_rtc at ff010000 irq 10
+goldfish_new_pdev goldfish_tty at ff002000 irq 4
+goldfish_new_pdev goldfish_tty at ff011000 irq 11
+goldfish_new_pdev goldfish_tty at ff012000 irq 12
+goldfish_new_pdev smc91x at ff013000 irq 13
+goldfish_new_pdev goldfish_fb at ff014000 irq 14
+goldfish_new_pdev goldfish_audio at ff004000 irq 15
+goldfish_new_pdev goldfish_mmc at ff005000 irq 16
+goldfish_new_pdev goldfish_memlog at ff006000 irq -1
+goldfish_new_pdev goldfish-battery at ff015000 irq 17
+goldfish_new_pdev goldfish_events at ff016000 irq 18
+goldfish_new_pdev goldfish_nand at ff017000 irq -1
+goldfish_new_pdev qemu_pipe at ff018000 irq 19
+goldfish_new_pdev goldfish-switch at ff01a000 irq 20
+goldfish_new_pdev goldfish-switch at ff01b000 irq 21
+<7>driver: 'goldfish_pdev_bus': driver_bound: bound to device 'goldfish_pdev_bus'
+<7>bus: 'platform': really_probe: bound device goldfish_pdev_bus to driver goldfish_pdev_bus
+<1>TODO __wake_up
+  calling 0x00096fa8
+<7>bus: 'platform': add driver goldfish_fb
+<7>kobject: 'goldfish_fb' (0xfd1f790): kobject_add_internal: parent: 'drivers', set: 'drivers'
+  calling 0x00097314
+<7>bus: 'platform': add driver goldfish_mmc
+<7>kobject: 'goldfish_mmc' (0xfd1f810): kobject_add_internal: parent: 'drivers', set: 'drivers'
+do_initcalls() end!
+ucore_vfs_add_device: fb0 29:0
+ucore_vfs_add_device: event0 13:64
+ucore_vfs_add_device: hzfchar 222:0
+cpu_idle: starting
+<7>Registering platform device 'goldfish_interrupt_'. Parent at platform
+<7>device: 'goldfish_interrupt_': device_add
+<7>kobject: 'goldfish_interrupt_' (0xfd2f054): kobject_add_internal: parent: 'platform', set: 'devices'
+<7>bus: 'platform': add device goldfish_interrupt_
+goldfish_pdev_worker registered goldfish_interrupt_controller
+<7>Registering platform device 'goldfish_device_bus'. Parent at platform
+<7>device: 'goldfish_device_bus': device_add
+<7>kobject: 'goldfish_device_bus' (0xfd2f254): kobject_add_internal: parent: 'platform', set: 'devices'
+<7>bus: 'platform': add device goldfish_device_bus
+goldfish_pdev_worker registered goldfish_device_bus
+<7>Registering platform device 'goldfish_timer'. Parent at platform
+<7>device: 'goldfish_timer': device_add
+<7>kobject: 'goldfish_timer' (0xfd2f454): kobject_add_internal: parent: 'platform', set: 'devices'
+<7>bus: 'platform': add device goldfish_timer
+goldfish_pdev_worker registered goldfish_timer
+<7>Registering platform device 'goldfish_rtc'. Parent at platform
+<7>device: 'goldfish_rtc': device_add
+<7>kobject: 'goldfish_rtc' (0xfd2f654): kobject_add_internal: parent: 'platform', set: 'devices'
+<7>bus: 'platform': add device goldfish_rtc
+goldfish_pdev_worker registered goldfish_rtc
+<7>Registering platform device 'goldfish_tty.0'. Parent at platform
+<7>device: 'goldfish_tty.0': device_add
+<7>kobject: 'goldfish_tty.0' (0xfd2f854): kobject_add_internal: parent: 'platform', set: 'devices'
+<7>bus: 'platform': add device goldfish_tty.0
+goldfish_pdev_worker registered goldfish_tty
+<7>Registering platform device 'goldfish_tty.1'. Parent at platform
+<7>device: 'goldfish_tty.1': device_add
+<7>kobject: 'goldfish_tty.1' (0xfd2fa54): kobject_add_internal: parent: 'platform', set: 'devices'
+<7>bus: 'platform': add device goldfish_tty.1
+goldfish_pdev_worker registered goldfish_tty
+<7>Registering platform device 'goldfish_tty.2'. Parent at platform
+<7>device: 'goldfish_tty.2': device_add
+<7>kobject: 'goldfish_tty.2' (0xfd2fc54): kobject_add_internal: parent: 'platform', set: 'devices'
+<7>bus: 'platform': add device goldfish_tty.2
+goldfish_pdev_worker registered goldfish_tty
+<7>Registering platform device 'smc91x.0'. Parent at platform
+<7>device: 'smc91x.0': device_add
+<7>kobject: 'smc91x.0' (0xfd2fe54): kobject_add_internal: parent: 'platform', set: 'devices'
+<7>bus: 'platform': add device smc91x.0
+goldfish_pdev_worker registered smc91x
+<7>Registering platform device 'goldfish_fb.0'. Parent at platform
+<7>device: 'goldfish_fb.0': device_add
+<7>kobject: 'goldfish_fb.0' (0xfd38054): kobject_add_internal: parent: 'platform', set: 'devices'
+<7>bus: 'platform': add device goldfish_fb.0
+<7>bus: 'platform': driver_probe_device: matched device goldfish_fb.0 with driver goldfish_fb
+<7>bus: 'platform': really_probe: probing driver goldfish_fb with device goldfish_fb.0
+<1>TODO init_waitqueue_head
+<1>dma_alloc_writecombine size 00065400
+allocating frame buffer 240 * 432, got 0xfdb2000
+<7>request_irq 14
+<1>TODO prepare_to_wait
+<1>TODO schedule_timeout
+<1>TODO finish_wait
+goldfish_fb_pan_display: timeout wating for base update
+<7>device: 'fb0': device_add
+<7>kobject: 'virtual' (0xfd2e5d0): kobject_add_internal: parent: 'devices', set: '<NULL>'
+<7>kobject: 'graphics' (0xfd2e610): kobject_add_internal: parent: 'virtual', set: '(null)'
+<7>kobject: 'fb0' (0xfd1bba4): kobject_add_internal: parent: 'graphics', set: 'devices'
+<7>driver: 'goldfish_fb.0': driver_bound: bound to device 'goldfish_fb'
+<7>bus: 'platform': really_probe: bound device goldfish_fb.0 to driver goldfish_fb
+<1>TODO __wake_up
+goldfish_pdev_worker registered goldfish_fb
+<7>Registering platform device 'goldfish_audio.0'. Parent at platform
+<7>device: 'goldfish_audio.0': device_add
+<7>kobject: 'goldfish_audio.0' (0xfd38254): kobject_add_internal: parent: 'platform', set: 'devices'
+<7>bus: 'platform': add device goldfish_audio.0
+goldfish_pdev_worker registered goldfish_audio
+<7>Registering platform device 'goldfish_mmc.0'. Parent at platform
+<7>device: 'goldfish_mmc.0': device_add
+<7>kobject: 'goldfish_mmc.0' (0xfd38454): kobject_add_internal: parent: 'platform', set: 'devices'
+<7>bus: 'platform': add device goldfish_mmc.0
+<7>bus: 'platform': driver_probe_device: matched device goldfish_mmc.0 with driver goldfish_mmc
+<7>bus: 'platform': really_probe: probing driver goldfish_mmc with device goldfish_mmc.0
+<1>TODO init_waitqueue_head
+<1>dma_alloc_writecombine size 00004000
+<7>request_irq 16
+<7>device: 'mmc0': device_add
+<7>kobject: 'mmc_host' (0xfd2e690): kobject_add_internal: parent: 'goldfish_mmc.0', set: '(null)'
+<7>kobject: 'mmc0' (0xfd39a4c): kobject_add_internal: parent: 'mmc_host', set: 'devices'
+kernel warning at sched.c:160:
+    wakeup runnable process.
+
+<7>driver: 'goldfish_mmc.0': driver_bound: bound to device 'goldfish_mmc'
+<7>bus: 'platform': really_probe: bound device goldfish_mmc.0 to driver goldfish_mmc
+<1>TODO __wake_up
+goldfish_pdev_worker registered goldfish_mmc
+<7>Registering platform device 'goldfish_memlog.0'. Parent at platform
+<7>device: 'goldfish_memlog.0': device_add
+<7>kobject: 'goldfish_memlog.0' (0xfd38654): kobject_add_internal: parent: 'platform', set: 'devices'
+<7>bus: 'platform': add device goldfish_memlog.0
+goldfish_pdev_worker registered goldfish_memlog
+<7>Registering platform device 'goldfish-battery.0'. Parent at platform
+<7>device: 'goldfish-battery.0': device_add
+<7>kobject: 'goldfish-battery.0' (0xfd38854): kobject_add_internal: parent: 'platform', set: 'devices'
+<7>bus: 'platform': add device goldfish-battery.0
+goldfish_pdev_worker registered goldfish-battery
+<7>Registering platform device 'goldfish_events.0'. Parent at platform
+<7>device: 'goldfish_events.0': device_add
+<7>kobject: 'goldfish_events.0' (0xfd38a54): kobject_add_internal: parent: 'platform', set: 'devices'
+<7>bus: 'platform': add device goldfish_events.0
+<7>bus: 'platform': driver_probe_device: matched device goldfish_events.0 with driver goldfish_events
+<7>bus: 'platform': really_probe: probing driver goldfish_events with device goldfish_events.0
+*** events probe ***
+<6>ioremap ff016000 00001000 
+events_probe() addr=0x0xef000000 irq=18
+events_probe() keymap=qwerty2
+<7>device: 'input0': device_add
+<7>kobject: 'input' (0xfd2e6d0): kobject_add_internal: parent: 'virtual', set: '(null)'
+<7>kobject: 'input0' (0xfd3f6bc): kobject_add_internal: parent: 'input', set: 'devices'
+<7>kobject: 'input0' (0xfd3f6bc): fill_kobj_path: path = '/devices/virtual/input/input0'
+<6>input: qwerty2 as /devices/virtual/input/input0
+<1>TODO init_waitqueue_head
+<7>device: 'event0': device_add
+<7>kobject: 'event0' (0xfd39ca4): kobject_add_internal: parent: 'input0', set: 'devices'
+<1>TODO __wake_up
+<7>request_irq 18
+<7>driver: 'goldfish_events.0': driver_bound: bound to device 'goldfish_events'
+<7>bus: 'platform': really_probe: bound device goldfish_events.0 to driver goldfish_events
+<1>TODO __wake_up
+goldfish_pdev_worker registered goldfish_events
+<7>Registering platform device 'goldfish_nand.0'. Parent at platform
+<7>device: 'goldfish_nand.0': device_add
+<7>kobject: 'goldfish_nand.0' (0xfd38c54): kobject_add_internal: parent: 'platform', set: 'devices'
+<7>bus: 'platform': add device goldfish_nand.0
+goldfish_pdev_worker registered goldfish_nand
+<7>Registering platform device 'qemu_pipe'. Parent at platform
+<7>device: 'qemu_pipe': device_add
+<7>kobject: 'qemu_pipe' (0xfd38e54): kobject_add_internal: parent: 'platform', set: 'devices'
+<7>bus: 'platform': add device qemu_pipe
+goldfish_pdev_worker registered qemu_pipe
+<7>Registering platform device 'goldfish-switch.0'. Parent at platform
+<7>device: 'goldfish-switch.0': device_add
+<7>kobject: 'goldfish-switch.0' (0xfd39054): kobject_add_internal: parent: 'platform', set: 'devices'
+<7>bus: 'platform': add device goldfish-switch.0
+goldfish_pdev_worker registered goldfish-switch
+<7>Registering platform device 'goldfish-switch.1'. Parent at platform
+<7>device: 'goldfish-switch.1': device_add
+<7>kobject: 'goldfish-switch.1' (0xfd39254): kobject_add_internal: parent: 'platform', set: 'devices'
+<7>bus: 'platform': add device goldfish-switch.1
+goldfish_pdev_worker registered goldfish-switch
+<1>TODO __wake_up
+<1>TODO add_wait_queue
+<1>TODO remove_wait_queue
+kernel_execve: pid = 4, name = "/system/bin/dalvikvm".
+## fn /system/bin/dalvikvm
+## argc 5
+## 0fd41000 /system/bin/dalvikvm
+## 0fe1e000 -Xbootclasspath:/framework/core.jar:/framework/ext.jar:/framework/framework.jar:/framework/android.policy.jar:/framework/services.jar
+## 0fe1f000 -cp
+## 0fe20000 foo.jar
+## 0fe21000 Foo
+## envc 1
+## 0fe22000 PATH=/bin/
+interp_path:/system/bin/linker
+map_ph:6fee0000
+map_ph:6fee0000
+sysfile_linux_fcntl64:fd=00000000 cmd=00000003 arg=00000008
+sysfile_linux_fcntl64:fd=00000001 cmd=00000003 arg=00000010
+sysfile_linux_fcntl64:fd=00000002 cmd=00000003 arg=00000010
+sysfile_linux_fcntl64:fd=00000002 cmd=00000003 arg=00000010
+-------------dalvikvm main-------------------
+ZHK in Main.cpp:208 options = 3
+ZHK in Jni.cpp:3412 JNI_CreateJavaVM
+ZHK in Jni.cpp:3284 dvmCreateJNIEnv
+ZHK in Jni.cpp:3513 dvmCreateJNIEnv successful!
+ZHK in Init.cpp:1202 dvmStartup...
+VM init args (3):
+ZHK in Init.cpp:1213 dvmStartup--setCommandLineDefaults()
+ZHK in Init.cpp:1217 dvmStartup--processOptions()
+ZHK in Init.cpp:1235 dvmStartup--access()
+Using kernel group scheduling
+ZHK in Init.cpp:1244 dvmStartup--configure signal handling
+ZHK in Init.cpp:1248 dvmStartup--verify system page size
+Using executionMode 3
+ZHK in Init.cpp:1257 dvmStartup--dvmCheckAsmConstants()
+ZHK in Init.cpp:1264 dvmStartup--dvmQuasiAtomicsStartup()
+ZHK in Init.cpp:1269 dvmStartup--dvmGcStartup()
+ZHK in Alloc.cpp:32 dvmGcStartup
+ZHK in Heap.cpp:77 dvmHeapStartup
+ZHK in HeapSource.cpp:506 dvmHeapSourceStartup
+ZHK in Init.cpp:1274 dvmStartup--dvmThreadStartup()
+ZHK in Init.cpp:1285 dvmStartup--dvmRegisterMapStartup()
+ZHK in Init.cpp:1290 dvmStartup--dvmInstanceofStartup()
+ZHK in Init.cpp:1294 dvmStartup--dvmClassStartup()
+ZHK in Class.cpp:411 dvmClassStartup
+ZHK in Class.cpp:418--------------------------
+ZHK in Class.cpp:421---------------------
+ZHK in Class.cpp:423------------------------
+ZHK in Class.cpp:425------------------------
+ZHK in Class.cpp:430---------------------------
+ZHK in Class.cpp:436----------------------------
+ZHK in Class.cpp:445--------------------------
+ZHK in Class.cpp:453--------------------------
+ZHK in Class.cpp:460 bootClassPathStr=/framework/core.jar:/framework/ext.jar:/framework/framework.jar:/framework/android.policy.jar:/framework/services.jar
+-----------------ZHK in Class.cpp:609 prepareCpe
+in JarFile.cpp:195 dvmJarFileOpen
++++ Found EOCD at buf+65535
+sysfile_linux_fcntl64:fd=00000016 cmd=00000001 arg=0000004c
+sysfile_linux_fcntl64:fd=00000016 cmd=00000002 arg=00000001
+Using alternate file (odex) for /framework/core.jar ...
+ZHK in DexFile.cpp:291 dexFileParse
+ZHK in DexFile.cpp:321 Good opt header, DEX offset is 40, flags=0x00
+ZHK in DexFile.cpp:271 dexFileSetupBasicPointers
+ZHK in DvmDex.cpp:43 allocateAuxStructures
+Successfully opened 'classes.dex' in '/framework/core.jar'
+ZHK in Class.cpp:609 prepareCpe
+in JarFile.cpp:195 dvmJarFileOpen
++++ Found EOCD at buf+65535
+sysfile_linux_fcntl64:fd=00000019 cmd=00000001 arg=00000062
+sysfile_linux_fcntl64:fd=00000019 cmd=00000002 arg=00000001
+Using alternate file (odex) for /framework/ext.jar ...
+in JarFile.cpp:230 /framework/ext.jar odex has stale dependencies
+in JarFile.cpp:247 tryArchive
+ZHK in JarFile:275 dvmJarFileOpen: Checking cache for /framework/ext.jar (/data/dalvik-cache/framework@ext.jar@classes.dex)
+ZHK in DexPrepare.cpp:132  dvmOpenCachedDexFile
+<1>TODO __wake_up
+<6>mmc0: new SD card at address e118
+<7>device: 'mmc0:e118': device_add
+<7>kobject: 'mmc0:e118' (0xfd39e4c): kobject_add_internal: parent: 'mmc0', set: 'devices'
+<7>bus: 'mmc': add device mmc0:e118
+<7>bus: 'mmc': driver_probe_device: matched device mmc0:e118 with driver ucore_mmcblk
+<7>bus: 'mmc': really_probe: probing driver ucore_mmcblk with device mmc0:e118
+<1>TODO add_wait_queue
+<1>TODO remove_wait_queue
+<6>ucore_mmcblk mmc0:e118: init MMC block for ucore
+ucore_mmcblk: lba: 2048000
+<6>ucore_mmcblk mmc0:e118: init MMC partitions for ucore
+Partition     Start Sector     Num Sectors     Type
+    1		         0	   2048000	f8
+fat32: ffs_do_mount done
+vfs: mount mmc0.
+<7>driver: 'mmc0:e118': driver_bound: bound to device 'ucore_mmcblk'
+<7>bus: 'mmc': really_probe: bound device mmc0:e118 to driver ucore_mmcblk
+<1>TODO __wake_up
+ZHK in DexPrepare.cpp:383 dvmOptimizeDexFile
+## fn /system/bin/dexopt
+## argc 11
+## 0f980000 /system/bin/dexopt
+## 0f981000 --dex
+## 0f982000 27
+## 0f983000 26
+## 0f984000 40
+## 0f985000 1334004
+## 0f986000 /framework/ext.jar
+## 0f987000 1118471532
+## 0f988000 -1777509641
+## 0f989000 61
+## 0f98b000 /framework/core.jar
+## envc 1
+## 0f98c000 PATH=/bin/
+interp_path:/system/bin/linker
+map_ph:6fee0000
+map_ph:6fee0000
+sysfile_linux_fcntl64:fd=00000000 cmd=00000003 arg=00000008
+sysfile_linux_fcntl64:fd=00000001 cmd=00000003 arg=00000010
+sysfile_linux_fcntl64:fd=00000002 cmd=00000003 arg=00000010
+sysfile_linux_fcntl64:fd=00000002 cmd=00000003 arg=00000010
+ZHK in OptMain.cpp:567
+ZHK in OptMain.cpp:569
+ZHK in OptMain.cpp:571
+ZHK in Optmain.cpp:429
+ZHK in Optmain.cpp:443
+ZHK in Optmain.cpp:452
+Args: fd=26 off=40 len=1334004 name='/framework/ext.jar' mod=0x42aa856c crc=0x960d5af7 flg=61 (argc=2)
+DEP: '/framework/core.jar'
+ZHK in Optmain.cpp:482
+  bootclasspath is '/framework/core.jar'
+ZHK in Optmain.cpp:520
+ZHK in Alloc.cpp:32 dvmGcStartup
+ZHK in Heap.cpp:77 dvmHeapStartup
+ZHK in HeapSource.cpp:506 dvmHeapSourceStartup
+ZHK in Class.cpp:411 dvmClassStartup
+ZHK in Class.cpp:418--------------------------
+ZHK in Class.cpp:421---------------------
+ZHK in Class.cpp:423------------------------
+ZHK in Class.cpp:425------------------------
+ZHK in Class.cpp:430---------------------------
+ZHK in Class.cpp:436----------------------------
+ZHK in Class.cpp:445--------------------------
+ZHK in Class.cpp:453--------------------------
+ZHK in Class.cpp:460 bootClassPathStr=/framework/core.jar
+-----------------ZHK in Class.cpp:609 prepareCpe
+in JarFile.cpp:195 dvmJarFileOpen
++++ Found EOCD at buf+65535
+sysfile_linux_fcntl64:fd=0000001d cmd=00000001 arg=0000004c
+sysfile_linux_fcntl64:fd=0000001d cmd=00000002 arg=00000001
+Using alternate file (odex) for /framework/core.jar ...
+ZHK in DexFile.cpp:291 dexFileParse
+ZHK in DexFile.cpp:321 Good opt header, DEX offset is 40, flags=0x00
+ZHK in DexFile.cpp:271 dexFileSetupBasicPointers
+ZHK in DvmDex.cpp:43 allocateAuxStructures
+Successfully opened 'classes.dex' in '/framework/core.jar'
+ZHK in Class.cpp:462---------------------------
+ZHK in Class.cpp:465--------------------------------
+ZHK in Optmain.cpp:527
+ZHK in DexPrepare.cpp:594 dvmContinueOptimization
+ZHK in DexPrepare.cpp:867 rewriteDex
+ZHK in DexFile.cpp:271 dexFileSetupBasicPointers
+ZHK in DvmDex.cpp:152 dvmDexFileOpenPartial
+ZHK in DexFile.cpp:291 dexFileParse
+ZHK in DexFile.cpp:271 dexFileSetupBasicPointers
+ZHK in DvmDex.cpp:43 allocateAuxStructures
+ZHK in DexPrepare.cpp:999 loadAllClasses
+ZHK in DvmDex.cpp:152 dvmDexFileOpenPartial
+ZHK in DexFile.cpp:291 dexFileParse
+ZHK in DexFile.cpp:271 dexFileSetupBasicPointers
+ZHK in DvmDex.cpp:43 allocateAuxStructures
+trapframe at 0xfd3bf58
+  r00  0x6ceca000
+  r01  0x00145b1c
+  r02  0x00000004
+  r03  0x00145b1c
+  r04  0x6fd1ecb0
+  r05  0x00000002
+  r06  0x00000001
+  r07  0x00000090
+  r08  0x0000003d
+  r09  0x6fff3fc4
+  r10  0x00000001
+  fp   0x42aa856c
+  ip   0x6fd1ef10
+  usr_lr   0x6fcac855
+  sp   0x6fff3e58
+  lr   0x6fd6d47c
+  spsr 0x00000050 User
+  trap 0x00000002 Software interrupt
+  err  0x00000000
+undefined syscall 0, pid = 4, name = <null> 4.
+fat32: [ffs_unmount]
+vfs: unmount mmc0.
+sfs: unmount: 'simple file system' (25310/13090/38400)
+vfs: unmount disk0.
+all user-mode processes have quit.
+kernel panic at proc.c:2018:
+    assertion failed: nr_process == 1 + pls_read(lcpu_count)
+Welcome to the kernel debug monitor!!
+Type 'help' for a list of commands.
+K> 
