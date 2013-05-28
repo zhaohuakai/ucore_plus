@@ -46,8 +46,6 @@ static uint32_t sys_execve(uint32_t arg[])
 	const char *name = (const char *)arg[0];
 	const char **argv = (const char **)arg[1];
 	
-	//int t = 0;
-	//kprintf("t addr=%x\n", &t);
 	/*if(argv == NULL){
 		argv = (const char **)0x6fffbf10;
 		argv[0] = (const char *)arg[0];		
