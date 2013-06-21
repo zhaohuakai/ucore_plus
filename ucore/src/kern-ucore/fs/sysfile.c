@@ -168,7 +168,7 @@ out:
 int sysfile_writev(int fd, struct iovec __user * iov, int iovcnt)
 {
 	/* do nothing but return 0 */
-	kprintf("writev: fd=%08x iov=%08x iovcnt=%d\n", fd, iov, iovcnt);
+	//kprintf("writev: fd=%08x iov=%08x iovcnt=%d\n", fd, iov, iovcnt);
 	struct iovec *tv;
 	int rcode = 0, count = 0, i;
 	struct mm_struct *mm = pls_read(current)->mm;
@@ -179,7 +179,12 @@ int sysfile_writev(int fd, struct iovec __user * iov, int iovcnt)
 		copy_from_user(mm, &pbase, &(iov[i].iov_base), sizeof(char *),
 			       0);
 		copy_from_user(mm, &plen, &(iov[i].iov_len), sizeof(size_t), 0);
-
+		// ZHKTODO
+		if(i==1)
+			kprintf("\t----%s ", pbase);
+		if(i==2)
+			kprintf("%s\n", pbase);
+		
 		rcode = sysfile_write(fd, pbase, plen);
 		if (rcode < 0)
 			break;

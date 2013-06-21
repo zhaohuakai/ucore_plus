@@ -851,7 +851,7 @@ static uint32_t __sys_linux_access(uint32_t arg[])
 
 static uint32_t __sys_linux_writev(uint32_t arg[])
 {
-	kprintf("[syscall __sys_linux_writev]\n");
+	//kprintf("[syscall __sys_linux_writev]\n");
 	int fd = (int)arg[0];
 	struct iovec *iov = (struct iovec *)arg[1];
 	int iovcnt = (int)arg[2];
@@ -971,7 +971,8 @@ static int __sys_linux_entry(struct trapframe *tf)
 				//kprintf("[syscall no %d]\tsys_read\n", num); 	break;
 				kprintf("[syscall no %d]\tread(%d, %d)\n", num, arg[0], arg[2]); 	break;
 			case 4:
-				kprintf("[syscall no %d]\tsys_write\n", num); break;
+				//kprintf("[syscall no %d]\tsys_write\n", num); 
+				break;
 			case 5:
 				//kprintf("[syscall no %d]\tsys_open path=%s\n", num, arg[0] ); break;
 				kprintf("[syscall no %d]\topen(%s)\n", num, arg[0]); break;
@@ -1038,28 +1039,26 @@ static int __sys_linux_entry(struct trapframe *tf)
 		}
 		*/
 		tf->tf_regs.reg_r[0] = _linux_syscalls[num] (arg);	// calling the system call, return value in r0
-		/*
+		
 		switch(num){			
 			case 1:
 				kprintf("[syscall no %d]\tsys_exit\n", num); 	break;
 			case 2:
 				kprintf("[syscall no %d]\tsys_fork\n", num); 	break;
 			case 3:
-				//kprintf("[syscall no %d]\tsys_read\n", num); 	break;
 				kprintf("[syscall no %d]\tread(%d, %d) = %d\n", num, arg[0], arg[2], tf->tf_regs.reg_r[0]); 	break;
 			case 4:
-				kprintf("[syscall no %d]\tsys_write\n", num); break;
+				//kprintf("[syscall no %d]\tsys_write\n", num); 
+				break;
 			case 5:
-				//kprintf("[syscall no %d]\tsys_open path=%s\n", num, arg[0] ); break;
 				kprintf("[syscall no %d]\topen(%s) = %d\n", num, arg[0], tf->tf_regs.reg_r[0]); break;
 			case 6:
-				//kprintf("[syscall no %d]\tsys_close\n", num); break;
 				kprintf("[syscall no %d]\tclose(%d) = %d\n", num, arg[0], tf->tf_regs.reg_r[0]); break;
 			case 11:
 				kprintf("[syscall no %d]\tsys_execve\n", num); 
-				kprintf("addr arg[0] = %x\n", &arg[0]);
-				kprintf("addr arg[1] = %x\n", &arg[1]);
-				kprintf("addr arg[2] = %x\n", &arg[2]);
+				//kprintf("addr arg[0] = %x\n", &arg[0]);
+				//kprintf("addr arg[1] = %x\n", &arg[1]);
+				//kprintf("addr arg[2] = %x\n", &arg[2]);
 				break;
 			case 19:
 				kprintf("[syscall no %d]\tsys_seek\n", num); break;
@@ -1073,18 +1072,19 @@ static int __sys_linux_entry(struct trapframe *tf)
 				//kprintf("[syscall no %d]\tsys_linux_sigaction\n", num); 
 				break;
 			case 91:
-				//kprintf("[syscall no %d]\tsys_munmap\n", num); break;
 				kprintf("[syscall no %d]\tmunmap(%x, %d, %d) = %d\n", num, arg[0], arg[1], arg[2], tf->tf_regs.reg_r[0]); break;
 			case 125:
-				//kprintf("[syscall no %d]\t__sys_linux_mprotect\n", num); break;
-				kprintf("[syscall no %d]\tmprotect(%x, %d, %d) = %d\n", num, arg[0], arg[1], arg[2], tf->tf_regs.reg_r[0]); break;
+				//kprintf("[syscall no %d]\tmprotect(%x, %d, %d) = %d\n", num, arg[0], arg[1], arg[2], tf->tf_regs.reg_r[0]); 
+				break;
+			case 146:
+				//kprintf("[syscall no %d]\t sysfile_writev(fd=%08x iov=%08x iovcnt=%d) = %d\n", num, arg[0], arg[1], arg[2], tf->tf_regs.reg_r[0]);
+				break;
 			case 192:
-				//kprintf("[syscall no %d]\t__sys_linux_mmap2\n", num); break;
 				kprintf("[syscall no %d]\tmmap(%x, %d, %d, %d, %d) = %x\n", num, arg[0], arg[1], arg[2], arg[3], arg[4], tf->tf_regs.reg_r[0]); break;
 			case 195:
-				kprintf("[syscall no %d]\t__sys_linux_stat64\n", num); break;
+				//kprintf("[syscall no %d]\t__sys_linux_stat64\n", num); 
+				break;
 			case 197:
-				//kprintf("[syscall no %d]\t__sys_linux_fstat64\n", num); break;
 				kprintf("[syscall no %d]\tfstat(%d) = %d\n", num, arg[0], tf->tf_regs.reg_r[0]); break;
 			case 199: // TODO
 				kprintf("[syscall no %d]\t__sys_linux_getuid\n", num); break;
@@ -1110,10 +1110,9 @@ static int __sys_linux_entry(struct trapframe *tf)
 			case 983045:				
 				kprintf("[syscall no %d]\t__sys_arm_linux_set_tls\n", num); break;
 			default:
-				//kprintf("");
 				kprintf("[syscall no %d]\t\n",num);
 		}
-		*/
+		
 		return 0;
 	}else{
 		return 0;

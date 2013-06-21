@@ -277,7 +277,7 @@ int file_write(int fd, void *base, size_t len, size_t * copied_store)
 	filemap_release(file);
 	return ret;
 }
-// ZHKTODO origin int
+
 off_t file_seek(int fd, off_t pos, int whence)
 {
 	struct stat __stat, *stat = &__stat;
@@ -306,7 +306,6 @@ off_t file_seek(int fd, off_t pos, int whence)
 	if (ret == 0) {
 		if ((ret = vop_tryseek(file->node, pos)) == 0) {
 			file->pos = pos;
-			// ZHKTODO
 			ret = pos;
 		}
 	}

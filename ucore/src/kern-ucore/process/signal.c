@@ -252,7 +252,7 @@ int do_sigpending(sigset_t * set)
 // do syscall sigprocmask
 int do_sigprocmask(int how, const sigset_t * set, sigset_t * old)
 {
-	kprintf("****************-----------------******************\n");
+	//kprintf("****************-----------------******************\n");
 	assert(get_si(current)->signal);
 	sigset_t new;
 	int ret = -E_INVAL;
@@ -289,7 +289,7 @@ int do_sigprocmask(int how, const sigset_t * set, sigset_t * old)
 		ret = -E_INVAL;
 	}
 	sig_recalc_pending(current);
-	kprintf("****************---------333------******************\n");
+	//kprintf("****************---------333------******************\n");
 out:
 	return ret;
 }

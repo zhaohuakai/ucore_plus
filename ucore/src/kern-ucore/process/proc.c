@@ -1218,14 +1218,17 @@ int do_execve(const char *filename, const char **argv, const char **envp)
 		char *buffer;
 		if ((buffer = kmalloc(EXEC_MAX_ARG_LEN + 1)) == NULL) {
 			kfree(buffer);
+			unlock_mm(mm);
 			return -1;
 		}
 		if (!copy_string(mm, buffer, filename, EXEC_MAX_ARG_LEN + 1)) {
 			kfree(buffer);
+			unlock_mm(mm);
 			return -1;
 		}
 		kargv[0] = buffer;		
 	}
+		
 	if ((ret = copy_kargv(mm, kenvp, envp, EXEC_MAX_ENV_NUM, &envc)) != 0) {
 		unlock_mm(mm);
 		put_kargv(argc, kargv);
